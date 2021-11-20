@@ -4,9 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ASAC_AR/Francesco/Fra_test.unity
+    guid: 915b5de847281574a9895c5e9bcbfdef
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
+      type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8a1e5c63534f8314c82c1dc9661d924d,
       type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 8effd0148d78ffa45b651a645b7ebb53,
       type: 2}
