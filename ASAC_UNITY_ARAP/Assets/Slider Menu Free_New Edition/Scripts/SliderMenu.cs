@@ -42,7 +42,8 @@ public enum nextbuttonverticalalign{
 
 
 public class SliderMenu : MonoBehaviour {
-	
+
+	public GameObject slideAttiva;
 
 	//=======================================Begin Main Objects===========================================
 	public		bool							MainObjectBlock;
@@ -270,6 +271,8 @@ public class SliderMenu : MonoBehaviour {
 					if (HorizontalScrollbar.GetComponent<Scrollbar> ().value > (ScrollStep / 2) + (i - 1) * ScrollStep && HorizontalScrollbar.GetComponent<Scrollbar> ().value <= Mathf.Clamp ((ScrollStep / 2) + i * ScrollStep, 0, 1)) {
 						//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Begin Active Slide
 						if (j == i) {
+							slideAttiva = Slides[j];
+							//Debug.Log(slideAttiva.name);
 							//------------------------------------------------------------------------Begin Position Animation
 							if (ActivePositionAnimation) {
 								Slides [j].GetComponent<RectTransform> ().localPosition = new Vector3 (
