@@ -12,6 +12,7 @@ public class PlacementManager : MonoBehaviour
 
     ARRaycastManager _rayManager;
     ARSessionOrigin _Arorigin;
+    ARPlaneManager planeManager;
     Pose posePlacement;
     bool validPosePlacement;
 
@@ -19,12 +20,18 @@ public class PlacementManager : MonoBehaviour
     {
         _rayManager = FindObjectOfType<ARRaycastManager>();
         _Arorigin = FindObjectOfType<ARSessionOrigin>();
+        planeManager = FindObjectOfType<ARPlaneManager>();
     }
 
     private void Update()
     {
         UpdatePlacement();
         UpdatePlacementPose();
+
+        if(validPosePlacement && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            PlaceObject();
+        }
     }
 
     void UpdatePlacement()
@@ -56,6 +63,22 @@ public class PlacementManager : MonoBehaviour
         {
             pointerObJ.SetActive(false);
         }
+    }
+
+    void PlaceObject()
+    {                                                      //rotazione di pose anche
+        Instantiate(objectToSpawn, posePlacement.position, posePlacement.rotation);
+
+        //deactive
+        foreach (var plane in planeManager.trackables)
+        {
+            //plane.gameObject.SetActive(false);
+            Destroy(plane.gameObject);
+        }
+        planeManager.enabled = false;
+
+        this.gameObject.SetActive(false);
+        
     }
 
 }
