@@ -26,6 +26,7 @@ public class PlacementManager : MonoBehaviour
     private void Update()
     {
         UpdatePlacement();
+        
         UpdatePlacementPose();
 
         if(validPosePlacement && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -68,7 +69,12 @@ public class PlacementManager : MonoBehaviour
     void PlaceObject()
     {                                                      //rotazione di pose anche
         Instantiate(objectToSpawn, posePlacement.position, posePlacement.rotation);
+        DeactiveARPlane();
 
+    }
+
+    public void DeactiveARPlane()
+    {
         //deactive
         foreach (var plane in planeManager.trackables)
         {
@@ -77,8 +83,8 @@ public class PlacementManager : MonoBehaviour
         }
         planeManager.enabled = false;
 
+        pointerObJ.SetActive(false);
         this.gameObject.SetActive(false);
-        
     }
 
 }
