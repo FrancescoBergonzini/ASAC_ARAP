@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
     Animator faldoni_anim;
 
+    public GameObject caroselloDocumenti;
+
 
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Swipe();
+            Swipe();
     }
 
     public void Swipe()
@@ -86,6 +88,8 @@ public class Player : MonoBehaviour
             if (Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {
                 outputText.text = "Tap";
+                caroselloDocumenti.SetActive(!caroselloDocumenti.activeSelf);
+                isSwitching = !isSwitching;
             }
 
         }
