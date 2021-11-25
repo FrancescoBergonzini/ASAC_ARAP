@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class ScatolaNera_Behaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //
+    Animator faldoni_anim;
+
+    private void Awake()
     {
-        
+       faldoni_anim = this.gameObject.GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        //qua metti input swipe
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            faldoni_anim.SetTrigger("LestSwipe");
+        }
     }
 }
