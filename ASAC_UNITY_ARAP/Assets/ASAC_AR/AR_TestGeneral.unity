@@ -841,7 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 2292504501851651278, guid: ec2c2b39a8498a747a763674002ed7e6,
+  m_PlanePrefab: {fileID: 1585201990951412, guid: d16dd8da7e4ccbe42b1b4a344a72ecbb,
     type: 3}
   m_DetectionMode: 2147483647
 --- !u!1 &1582872304
@@ -3723,7 +3723,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7359630054228464624}
   m_HandleRect: {fileID: 7359630054228464631}
   m_Direction: 3
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
