@@ -11,9 +11,18 @@ public class Player : MonoBehaviour
     private Vector2 currentPosition;
     private Vector2 endTouchPosition;
     private bool stopTouch = false;
+    private bool isSwitching=false;
 
     public float swipeRange;
     public float tapRange;
+
+    Animator faldoni_anim;
+
+
+    private void Awake()
+    {
+        faldoni_anim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,21 +48,26 @@ public class Player : MonoBehaviour
                 if (Distance.x < -swipeRange)
                 {
                     outputText.text = "Left";
+                    //faldoni_anim.SetTrigger("LestSwipe");
                     stopTouch = true;
                 }
                 else if (Distance.x > swipeRange)
                 {
                     outputText.text = "Right";
+                    //faldoni_anim.SetTrigger("LestSwipe");
                     stopTouch = true;
                 }
-                else if (Distance.y > swipeRange)
+                else if (Distance.y > swipeRange && !isSwitching)
                 {
                     outputText.text = "Up";
+                    faldoni_anim.SetTrigger("LestSwipe");
+                    isSwitching = true;
                     stopTouch = true;
                 }
                 else if (Distance.y < -swipeRange)
                 {
                     outputText.text = "Down";
+                    //faldoni_anim.SetTrigger("LestSwipe");
                     stopTouch = true;
                 }
 
@@ -76,6 +90,9 @@ public class Player : MonoBehaviour
 
         }
 
-
     }
+        public void ChangeSwitchState()
+        {
+            isSwitching = false;
+        }
 }
