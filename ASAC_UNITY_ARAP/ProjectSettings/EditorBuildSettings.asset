@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/ASAC_AR/AR_TestGeneral.unity
     guid: f46c87010d426fc46a6469d32158f657
+  - enabled: 1
+    path: Assets/ASAC_AR/Simone/Simo_test.unity
+    guid: dda84e2d502464545a06c9b576131d82
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
