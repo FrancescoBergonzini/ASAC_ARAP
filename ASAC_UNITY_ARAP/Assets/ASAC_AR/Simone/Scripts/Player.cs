@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public Text outputText;
+    //public Text outputText;
 
     private Vector2 startTouchPosition;
     private Vector2 currentPosition;
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     Animator faldoni_anim;
 
-    public GameObject caroselloDocumenti;
+    //public GameObject caroselloDocumenti;
 
 
     private void Awake()
@@ -49,26 +49,26 @@ public class Player : MonoBehaviour
 
                 if (Distance.x < -swipeRange)
                 {
-                    outputText.text = "Left";
+                    
                     //faldoni_anim.SetTrigger("LestSwipe");
                     stopTouch = true;
                 }
                 else if (Distance.x > swipeRange)
                 {
-                    outputText.text = "Right";
+                    
                     //faldoni_anim.SetTrigger("LestSwipe");
                     stopTouch = true;
                 }
                 else if (Distance.y > swipeRange && !isSwitching)
                 {
-                    outputText.text = "Up";
+                    
                     faldoni_anim.SetTrigger("LestSwipe");
                     isSwitching = true;
                     stopTouch = true;
                 }
                 else if (Distance.y < -swipeRange)
                 {
-                    outputText.text = "Down";
+                    
                     //faldoni_anim.SetTrigger("LestSwipe");
                     stopTouch = true;
                 }
@@ -87,9 +87,9 @@ public class Player : MonoBehaviour
 
             if (Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {
-                outputText.text = "Tap";
-                caroselloDocumenti.SetActive(!caroselloDocumenti.activeSelf);
-                isSwitching = !isSwitching;
+                
+                //caroselloDocumenti.SetActive(!caroselloDocumenti.activeSelf);
+                //isSwitching = !isSwitching;
             }
 
         }

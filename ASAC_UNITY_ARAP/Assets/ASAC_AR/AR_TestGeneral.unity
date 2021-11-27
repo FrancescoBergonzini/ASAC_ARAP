@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointerObJ: {fileID: 415830145}
-  objectToSpawn: {fileID: 441660871222534213, guid: e6fc11e1a96f037489f471d60b6d6cae,
+  objectToSpawn: {fileID: 6058388286639407872, guid: bdf929a988564484092e3a126982909e,
     type: 3}
 --- !u!4 &594620008
 Transform:
@@ -3723,7 +3723,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7359630054228464624}
   m_HandleRect: {fileID: 7359630054228464631}
   m_Direction: 3
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
