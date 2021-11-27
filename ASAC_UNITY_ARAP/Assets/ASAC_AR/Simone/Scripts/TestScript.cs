@@ -8,7 +8,8 @@ public class TestScript : MonoBehaviour
 {
         //Ho inserito una variabile nel codice originale per tener conto di quale sia la slider attiva
     public SliderMenu sliderMenu;
-
+    [SerializeField] Text debugText_up;
+    [SerializeField] Text debugText_down;
 
     private void Update()
     {
@@ -18,6 +19,9 @@ public class TestScript : MonoBehaviour
             if (slide == sliderMenu.slideAttiva)
             {
                 slide.GetComponent<Button>().enabled = true;
+                ChangeText(slide);
+
+                
             }
             else
             {
@@ -38,6 +42,12 @@ public class TestScript : MonoBehaviour
     public void GotoScene(int scena)
     {
         SceneManager.LoadScene(scena);
+    }
+
+    private void ChangeText(GameObject slider)
+    {
+        debugText_up.text = $"{slider.gameObject.name}_testo in alto";
+        debugText_down.text = $"{slider.gameObject.name}_testo in basso";
     }
 
 }
