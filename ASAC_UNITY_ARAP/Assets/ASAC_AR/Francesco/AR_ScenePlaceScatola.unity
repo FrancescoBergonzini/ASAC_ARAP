@@ -1841,14 +1841,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98323539217139863}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56327037e61a1d5418ac48b0ff7a9a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sliderMenu: {fileID: 7359630055500734941}
-  debugText_up: {fileID: 0}
-  debugText_down: {fileID: 0}
 --- !u!4 &98323539217139861
 Transform:
   m_ObjectHideFlags: 0
@@ -1874,7 +1872,6 @@ GameObject:
   - component: {fileID: 98323539217139861}
   - component: {fileID: 98323539217139860}
   - component: {fileID: 98323539217139864}
-  - component: {fileID: 98323539217139865}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1900,19 +1897,6 @@ MonoBehaviour:
   _indicator: {fileID: 415830145}
   _placeScatolaManager: {fileID: 594620007}
   planeManager: {fileID: 1351873107}
---- !u!114 &98323539217139865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98323539217139863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f04585b78730f47844457cad0c3011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeBox: {fileID: 0}
 --- !u!114 &98323539386742180
 MonoBehaviour:
   m_ObjectHideFlags: 0
