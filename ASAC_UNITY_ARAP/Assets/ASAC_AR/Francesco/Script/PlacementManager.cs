@@ -10,11 +10,14 @@ public class PlacementManager : MonoBehaviour
     [SerializeField] GameObject pointerObJ;
     [SerializeField] GameObject objectToSpawn;
 
+    GameObject scatolaInScena;
+
     ARRaycastManager _rayManager;
     ARSessionOrigin _Arorigin;
     ARPlaneManager planeManager;
     Pose posePlacement;
     bool validPosePlacement;
+    bool placed = false;
 
     private void Awake()
     {
@@ -28,7 +31,13 @@ public class PlacementManager : MonoBehaviour
         UpdatePlacement();
         
         UpdatePlacementPose();
-
+        if (scatolaInScena != null)
+        {
+            if ( Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                scatolaInScena.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Open");
+            }
+        }
         if(validPosePlacement && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             PlaceObject();
@@ -68,7 +77,7 @@ public class PlacementManager : MonoBehaviour
 
     void PlaceObject()
     {                                                      //rotazione di pose anche
-        Instantiate(objectToSpawn, posePlacement.position, posePlacement.rotation);
+        scatolaInScena=Instantiate(objectToSpawn, posePlacement.position, posePlacement.rotation);
         DeactiveARPlane();
 
     }
