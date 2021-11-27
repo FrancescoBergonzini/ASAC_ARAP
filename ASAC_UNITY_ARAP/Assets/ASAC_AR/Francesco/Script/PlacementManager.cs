@@ -10,7 +10,7 @@ public class PlacementManager : MonoBehaviour
     [SerializeField] GameObject pointerObJ;
     [SerializeField] GameObject objectToSpawn;
 
-    GameObject scatolaInScena;
+    ManagerScatolaInScena msin;
 
     ARRaycastManager _rayManager;
     ARSessionOrigin _Arorigin;
@@ -24,6 +24,7 @@ public class PlacementManager : MonoBehaviour
         _rayManager = FindObjectOfType<ARRaycastManager>();
         _Arorigin = FindObjectOfType<ARSessionOrigin>();
         planeManager = FindObjectOfType<ARPlaneManager>();
+        msin = GameObject.Find("Manager").GetComponent<ManagerScatolaInScena>();
     }
 
     private void Update()
@@ -31,13 +32,6 @@ public class PlacementManager : MonoBehaviour
         UpdatePlacement();
         
         UpdatePlacementPose();
-        if (scatolaInScena != null)
-        {
-            if ( Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                scatolaInScena.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Open");
-            }
-        }
         if(validPosePlacement && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             PlaceObject();
@@ -77,7 +71,7 @@ public class PlacementManager : MonoBehaviour
 
     void PlaceObject()
     {                                                      //rotazione di pose anche
-        scatolaInScena=Instantiate(objectToSpawn, posePlacement.position, posePlacement.rotation);
+        msin.activeBox=Instantiate(objectToSpawn, posePlacement.position, posePlacement.rotation);
         DeactiveARPlane();
 
     }
