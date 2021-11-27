@@ -38,6 +38,7 @@ public class IntroCanvasController : MonoBehaviour
     {
         foreach (ARTrackedImage image in images.added)
         {
+            //attiva solo quando sei in mod scan
             if (image.referenceImage.name == "QR_Code")
             {
                 //attiva animazione scan

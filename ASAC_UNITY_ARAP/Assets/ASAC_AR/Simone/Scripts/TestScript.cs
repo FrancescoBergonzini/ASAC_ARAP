@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TestScript : MonoBehaviour
 {
@@ -33,4 +34,10 @@ public class TestScript : MonoBehaviour
     {
         Debug.Log(i);
     }
+
+    public void GotoScene(int scena)
+    {
+        SceneManager.LoadScene(scena);
+    }
+
 }
