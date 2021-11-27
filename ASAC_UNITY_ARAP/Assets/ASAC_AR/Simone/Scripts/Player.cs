@@ -18,18 +18,23 @@ public class Player : MonoBehaviour
 
     Animator faldoni_anim;
 
-    //public GameObject caroselloDocumenti;
+    public GameObject caroselloDocumenti;
 
 
     private void Awake()
     {
         faldoni_anim = GetComponent<Animator>();
+        caroselloDocumenti = GameObject.Find("CaroselloDocumenti");
     }
 
     // Update is called once per frame
     void Update()
     {
             Swipe();
+        if (this.gameObject != null)
+        {
+            this.gameObject.GetComponentInParent<Transform>().rotation = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
+        }
     }
 
     public void Swipe()
@@ -88,8 +93,8 @@ public class Player : MonoBehaviour
             if (Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {
                 
-                //caroselloDocumenti.SetActive(!caroselloDocumenti.activeSelf);
-                //isSwitching = !isSwitching;
+                caroselloDocumenti.transform.GetChild(0).gameObject.SetActive(!caroselloDocumenti.transform.GetChild(0).gameObject.activeSelf);
+                isSwitching = !isSwitching;
             }
 
         }

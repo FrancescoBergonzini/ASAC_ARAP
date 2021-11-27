@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2584350758641379548}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.365, y: 0.117, z: 0.156}
   m_LocalScale: {x: 0.18297353, y: 0.1369374, z: 0.22831437}
   m_Children:
   - {fileID: 6126909460917702763}
   m_Father: {fileID: 8467091627104298716}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &6058388286639407872
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipeRange: 40
   tapRange: 15
+  caroselloDocumenti: {fileID: 0}
 --- !u!1001 &247593423091902262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,22 +197,22 @@ PrefabInstance:
     - target: {fileID: 6226375303122876253, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6226375303122876253, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226375303122876253, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6226375303122876253, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226375303122876253, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
@@ -221,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 6226375303122876253, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6226375303122876253, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
