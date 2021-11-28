@@ -11,8 +11,6 @@ public class IntroCanvasController : MonoBehaviour
     ARTrackedImageManager _trackedManager;
     //
     [SerializeField] Animator scanAnimat;
-    //
-    [SerializeField] Text debugtext;
 
     private void Awake()
     {
@@ -43,7 +41,6 @@ public class IntroCanvasController : MonoBehaviour
             {
                 //attiva animazione scan
                 scanAnimat.SetTrigger("Scan");
-                debugtext.text = "Animazione in corso";
             }
         }
 
