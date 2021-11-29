@@ -5,12 +5,17 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
 
+
 public class IntroCanvasController : MonoBehaviour
 {
     //
     ARTrackedImageManager _trackedManager;
     //
     [SerializeField] Animator scanAnimat;
+
+    //scanok
+    bool scanView;
+    [SerializeField] GameObject scannerobj;
 
     private void Awake()
     {
@@ -24,7 +29,14 @@ public class IntroCanvasController : MonoBehaviour
         _trackedManager.trackedImagesChanged += ChangePrefabOnImage;
     }
 
-
+    private void Update()
+    {
+        if (scanView && scannerobj.activeSelf == true)
+        {
+            //attiva animazione scan
+            scanAnimat.SetTrigger("Scan");
+        }
+    }
     private void OnDisable()
     {
         _trackedManager.trackedImagesChanged -= ChangePrefabOnImage;
@@ -39,8 +51,7 @@ public class IntroCanvasController : MonoBehaviour
             //attiva solo quando sei in mod scan
             if (image.referenceImage.name == "QR_Code")
             {
-                //attiva animazione scan
-                scanAnimat.SetTrigger("Scan");
+                scanView = true;
             }
         }
 
