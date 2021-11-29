@@ -49,7 +49,7 @@ MeshRenderer:
   m_GameObject: {fileID: 2306035424723103518}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -232,7 +232,7 @@ MeshRenderer:
   m_GameObject: {fileID: 3287825890937932217}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -314,7 +314,7 @@ MeshRenderer:
   m_GameObject: {fileID: 3435778822151434317}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -403,7 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8586853678724743901}
   - component: {fileID: 4108058331524042364}
-  - component: {fileID: 6421827534065015896}
+  - component: {fileID: 3095056853396272531}
   m_Layer: 0
   m_Name: LacciSuperiori
   m_TagString: Untagged
@@ -433,8 +433,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6254098919277934026}
   m_Mesh: {fileID: -6194588358398146385, guid: 5b7a0d97f9527ca4f9079e06c4d5e2e3, type: 3}
---- !u!137 &6421827534065015896
-SkinnedMeshRenderer:
+--- !u!23 &3095056853396272531
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -442,13 +442,13 @@ SkinnedMeshRenderer:
   m_GameObject: {fileID: 6254098919277934026}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
+  m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -474,18 +474,7 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -6194588358398146385, guid: 5b7a0d97f9527ca4f9079e06c4d5e2e3, type: 3}
-  m_Bones: []
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: -0.008959448, y: -0.00025176443, z: 0.00704376}
-    m_Extent: {x: 0.001804176, y: 0.013069522, z: 0.0053545875}
-  m_DirtyAABB: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7135153872305778861
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +524,7 @@ MeshRenderer:
   m_GameObject: {fileID: 7135153872305778861}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -595,6 +584,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 6226375302035503085, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6226375302463937856, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -614,6 +608,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226375302463937858, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226375302528447317, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
@@ -640,6 +639,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6226375302528447319, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6226375302995492579, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -659,6 +663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226375302995492581, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6226375303122876250, guid: 90c0d9803e4eb9e4ab1f3fca1bf2d73e,
         type: 3}
