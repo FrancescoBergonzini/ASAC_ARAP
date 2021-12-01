@@ -7,18 +7,19 @@ public class Player : MonoBehaviour
 {
     //public Text outputText;
 
-    private Vector2 startTouchPosition;
-    private Vector2 currentPosition;
-    private Vector2 endTouchPosition;
-    private bool stopTouch = false;
-    private bool isSwitching=false;
+    private Vector2 startTouchPosition, currentPosition, endTouchPosition;
+    private bool stopTouch = false, isSwitching=false;
 
-    public float swipeRange;
-    public float tapRange;
+    public float swipeRange, tapRange;
 
     Animator faldoni_anim;
 
     public GameObject caroselloDocumenti;
+
+    //
+    public List<Animator> AnimatoriAperturaFaldoni;
+    int contatore = 0;
+    bool apriono;
 
 
     private void Awake()
@@ -30,18 +31,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            Swipe();
-        if (this.gameObject != null)
-        {
-            this.gameObject.GetComponentInParent<Transform>().rotation = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
-        }
+        Swipe();
+        Touch();
     }
 
     public void Swipe()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            startTouchPosition = Input.GetTouch(0).position;
+            startTouchPosition = Input.GetTouch(0).position; //posizione iniziale
         }
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
@@ -49,6 +47,7 @@ public class Player : MonoBehaviour
             currentPosition = Input.GetTouch(0).position;
             Vector2 Distance = currentPosition - startTouchPosition;
 
+            //tipo di swipe
             if (!stopTouch)
             {
 
@@ -66,10 +65,17 @@ public class Player : MonoBehaviour
                 }
                 else if (Distance.y > swipeRange && !isSwitching)
                 {
-                    
+                    //qua verso alto
                     faldoni_anim.SetTrigger("LestSwipe");
                     isSwitching = true;
                     stopTouch = true;
+
+                    //
+                    contatore++;
+                    if(contatore > 3)
+                    {
+                        contatore = 0;
+                    }
                 }
                 else if (Distance.y < -swipeRange)
                 {
@@ -80,8 +86,12 @@ public class Player : MonoBehaviour
 
             }
 
-        }
+        }    
+    }
 
+    public void Touch()
+    {
+        //metodi touch
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             stopTouch = false;
@@ -92,15 +102,34 @@ public class Player : MonoBehaviour
 
             if (Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {
-                
-                caroselloDocumenti.transform.GetChild(0).gameObject.SetActive(!caroselloDocumenti.transform.GetChild(0).gameObject.activeSelf);
-                isSwitching = !isSwitching;
+                //animazione faldone
+                //attenzione questo va reso un metodo e chiusa anche 
+                AnimatoriAperturaFaldoni[contatore].SetTrigger("Apertura");
+
+                //da sistemare
+                AttivaAnimazioneApertura(apriono);
             }
 
         }
-
     }
-        public void ChangeSwitchState()
+
+    private void AttivaAnimazioneApertura(bool apri)
+    {
+        float tempo;
+        tempo = (apri == false ? 1.5f : 0);  
+
+        Invoke("ApriCaroselloDocumenti", tempo);
+        apriono = !apriono;
+    }
+
+    private void ApriCaroselloDocumenti()
+    {
+        //qua attivo carosello quando finisce animazione
+        caroselloDocumenti.transform.GetChild(0).gameObject.SetActive(!caroselloDocumenti.transform.GetChild(0).gameObject.activeSelf);
+        isSwitching = !isSwitching;
+    }
+
+    public void ChangeSwitchState()
         {
             isSwitching = false;
         }
