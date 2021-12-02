@@ -21,11 +21,16 @@ public class Player : MonoBehaviour
     int contatore = 0;
     bool apriono;
 
+    //
+    private Button _bottoneSpegniCarosello;
+
 
     private void Awake()
     {
         faldoni_anim = GetComponent<Animator>();
         caroselloDocumenti = GameObject.Find("CaroselloDocumenti");
+        
+
     }
 
     // Update is called once per frame
@@ -101,24 +106,57 @@ public class Player : MonoBehaviour
 
             if (Mathf.Abs(Distance.x) < tapRange && Mathf.Abs(Distance.y) < tapRange)
             {
-                //animazione faldone
-                //attenzione questo va reso un metodo e chiusa anche 
-                AnimatoriAperturaFaldoni[contatore].SetTrigger("Apertura");
+                if (apriono)
+                    return;
+                //premuto apriono diventa vero
+                AttivaCarosello();
 
-                //da sistemare
-                AttivaAnimazioneApertura(apriono);
             }
 
         }
     }
 
-    private void AttivaAnimazioneApertura(bool apri)
+    private void AttivaCarosello()
+    {
+        //attivare il trigger nell'animazione
+        AnimatoriAperturaFaldoni[contatore].SetTrigger("Apertura");
+
+        //da sistemare
+        AccendiOSpegniCarosello(apriono);
+        //
+        Invoke("AssegnaBottoneDiSpegnimento", 2f);
+    }
+
+    private void AssegnaBottoneDiSpegnimento()
+    {
+        if (!apriono)
+            return;
+        //
+        var objButtone = GameObject.FindGameObjectWithTag("SpegniCar");
+        _bottoneSpegniCarosello = objButtone.GetComponent<Button>();
+        _bottoneSpegniCarosello.onClick.AddListener(SpegniCarosello);
+    }
+
+    private void SpegniCarosello()
+    {
+        //attivare il trigger nell'animazione
+        AnimatoriAperturaFaldoni[contatore].SetTrigger("Apertura");
+
+        //da sistemare
+        AccendiOSpegniCarosello(apriono);
+
+        var objButtone = GameObject.FindGameObjectWithTag("SpegniCar");
+        _bottoneSpegniCarosello = objButtone.GetComponent<Button>();
+        _bottoneSpegniCarosello.onClick.RemoveAllListeners();
+    }
+
+    private void AccendiOSpegniCarosello(bool apri)
     {
         float tempo;
-        tempo = (apri == false ? 1.5f : 0);  
+        tempo = (apri == false ? 1.5f : 0.1f);  
 
         Invoke("ApriCaroselloDocumenti", tempo);
-        apriono = !apriono;
+        
     }
 
     private void ApriCaroselloDocumenti()
@@ -126,6 +164,8 @@ public class Player : MonoBehaviour
         //qua attivo carosello quando finisce animazione
         caroselloDocumenti.transform.GetChild(0).gameObject.SetActive(!caroselloDocumenti.transform.GetChild(0).gameObject.activeSelf);
         isSwitching = !isSwitching;
+
+        apriono = !apriono;
     }
 
     public void ChangeSwitchState()

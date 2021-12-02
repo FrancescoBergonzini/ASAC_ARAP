@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
 
     public void PremoCarosello()
     {
-        //spendo il carosello
+        //spenmo il carosello
         _carosello.SetActive(false);
         _backTocarosello.SetActive(true);
 
