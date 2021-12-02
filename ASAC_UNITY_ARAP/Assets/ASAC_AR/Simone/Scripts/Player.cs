@@ -53,7 +53,6 @@ public class Player : MonoBehaviour
 
                 if (Distance.x < -swipeRange)
                 {
-                    
                     //faldoni_anim.SetTrigger("LestSwipe");
                     stopTouch = true;
                 }
