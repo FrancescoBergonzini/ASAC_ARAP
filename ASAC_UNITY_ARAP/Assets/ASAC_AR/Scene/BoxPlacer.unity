@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointerObJ: {fileID: 415830145}
-  objectToSpawn: {fileID: 6058388286639407872, guid: bdf929a988564484092e3a126982909e,
+  objectToSpawn: {fileID: 2861970024565711283, guid: b32c36ec788d12e4eab01c7e776bdc31,
     type: 3}
 --- !u!4 &594620008
 Transform:
@@ -1473,7 +1473,7 @@ PrefabInstance:
     - target: {fileID: 4674861107278181619, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4674861107278181619, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
@@ -1535,40 +1535,100 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8625626393024944212, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eff413db979eda947a1ae093409fc12d,
+        type: 3}
+    - target: {fileID: 8625626393033992962, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 003763b8cb1d2c24c90bda6acfa577fa,
+        type: 3}
     - target: {fileID: 8625626393062153096, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8625626393062153096, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8625626393090445261, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c9a19fd5675deeb43b2a04acfb3ffdbe,
+        type: 3}
+    - target: {fileID: 8625626393267376775, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2507bf8954c8f544593ba7a2f6b6b34c,
+        type: 3}
+    - target: {fileID: 8625626393307163283, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ddbf5abe24605d4b8c8d5e69b530b3d,
+        type: 3}
     - target: {fileID: 8625626393485146772, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8625626393485146772, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8625626393485146772, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8625626393514006370, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 956d54621c54396408fe7018f8ebffb7,
+        type: 3}
+    - target: {fileID: 8625626393533494123, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb217b7de910e5a4caa947f9b8977fac,
+        type: 3}
     - target: {fileID: 8625626393661103125, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8625626393770563735, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 20eb2f9844a50134dade0e90140e1d66,
+        type: 3}
+    - target: {fileID: 8625626393955552136, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 50ec1017fd22a2b46a48a1aaa53524f7,
+        type: 3}
+    - target: {fileID: 8625626393986689765, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 500e5bc92c0d7f54abab07b3c2f39995,
+        type: 3}
     - target: {fileID: 8625626395001711039, guid: c5e59c2b64fc6f645ba57ea4c0f48d41,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e59c2b64fc6f645ba57ea4c0f48d41, type: 3}
@@ -2433,7 +2493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1996661527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3161,7 +3221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &98323539217139863
 GameObject:
@@ -3601,7 +3661,7 @@ RectTransform:
   m_Father: {fileID: 7359630054692841577}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.000000012207032, y: 0}
   m_AnchorMax: {x: 0.24, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -4776,7 +4836,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7359630054081295076}
   m_HandleRect: {fileID: 7359630054081295083}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 0.000000016061884
   m_Size: 0.24
   m_NumberOfSteps: 0
   m_OnValueChanged:
