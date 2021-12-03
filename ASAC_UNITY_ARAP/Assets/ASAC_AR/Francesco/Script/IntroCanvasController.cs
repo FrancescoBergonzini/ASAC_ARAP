@@ -15,11 +15,22 @@ public class IntroCanvasController : MonoBehaviour
 
     //scanok
     bool scanView;
-    [SerializeField] GameObject scannerobj;
+    [SerializeField] GameObject scannerobj, buttonCarosello, buttonScan;
 
     private void Awake()
     {
         _trackedManager = FindObjectOfType<ARTrackedImageManager>();
+    }
+    private void Start()
+    {
+        var initialScan = new Vector3(Screen.width *150/100, Screen.height * 50 / 100);
+        var initialCarosello = new Vector3(Screen.width * (-50) / 100, Screen.height * 15 / 100);
+        buttonScan.transform.position = initialScan;
+        buttonCarosello.transform.position = initialCarosello;
+        var destinationScan = new Vector3(Screen.width / 2, buttonScan.transform.position.y);
+        var destinationCarosello = new Vector3(Screen.width / 2, buttonCarosello.transform.position.y);
+        LeanTween.move(buttonScan, destinationScan, 2).setEaseOutQuart().setEaseOutBack().delay=0.5f;
+        LeanTween.move(buttonCarosello, destinationCarosello, 2).setEaseOutQuart().setEaseOutBack().delay=0.5f;
     }
 
     #region subscrive event
@@ -56,4 +67,5 @@ public class IntroCanvasController : MonoBehaviour
         }
 
     }
+
 }

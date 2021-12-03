@@ -73,12 +73,12 @@ public class UIManager : MonoBehaviour
             bottone.GetComponent<Image>().color = Color.green;
         }
         ammount = bottone.GetComponent<Image>().color == Color.green ? 1.1f : 0.9f;
-        backgroundTesto.LeanMove(new Vector3(testoSalvataggio.transform.position.x, (Screen.height * 90 / 100)), 1).setEaseOutQuart().setOnComplete(TestoBackPosition);
+        backgroundTesto.LeanMove(new Vector3((Screen.width * 65 / 100),testoSalvataggio.transform.position.y), 1).setEaseOutQuart().setOnComplete(TestoBackPosition);
     }
 
     private void TestoBackPosition()
     {
         LeanTween.scale(backgroundTesto.gameObject, Vector3.one * ammount, 1).setEasePunch();
-        backgroundTesto.LeanMove(new Vector3(testoSalvataggio.transform.position.x, (Screen.height * 110 / 100)), 1).setEaseInOutQuart().delay = 0.5f;
+        backgroundTesto.LeanMove(new Vector3( (Screen.width * 135 / 100), testoSalvataggio.transform.position.y), 1).setEaseInOutQuart().delay = 0.5f;
     }
 }
