@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
 
     public void SalvaDocumento(GameObject bottone)
     {
-        if (bottone.GetComponent<Image>().color == Color.green)
+        if (bottone.GetComponent<Image>().color == Color.red)
         {
             testoSalvataggio.text = "Documento non salvato";
             bottone.GetComponent<Image>().color = Color.white;
@@ -75,10 +75,10 @@ public class UIManager : MonoBehaviour
         else
         {
             testoSalvataggio.text = "Documento salvato";
-            bottone.GetComponent<Image>().color = Color.green;
+            bottone.GetComponent<Image>().color = Color.red;
         }
-        ammount = bottone.GetComponent<Image>().color == Color.green ? 1.1f : 0.9f;
-        backgroundTesto.LeanMove(new Vector3((Screen.width * 65 / 100),testoSalvataggio.transform.position.y), 1).setEaseOutQuart().setOnComplete(TestoBackPosition);
+        ammount = bottone.GetComponent<Image>().color == Color.red ? 1.1f : 0.9f;
+        backgroundTesto.LeanMove(new Vector3((Screen.width * 70 / 100),testoSalvataggio.transform.position.y), 1).setEaseOutQuart().setOnComplete(TestoBackPosition);
     }
 
     private void TestoBackPosition()
