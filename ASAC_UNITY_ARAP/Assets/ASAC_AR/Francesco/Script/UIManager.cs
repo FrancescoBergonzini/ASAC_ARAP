@@ -14,13 +14,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _backTocarosello;
     [SerializeField] GameObject _reset;
     [SerializeField] GameObject _indicator;
+    [SerializeField] GameObject docNonDisponibile;
 
     //
     [SerializeField] PlacementManager _placeScatolaManager;
     [SerializeField] ARPlaneManager planeManager;
+    [SerializeField] SliderMenu _sliderMenu;
+
 
     [SerializeField] Text testoSalvataggio;
     [SerializeField] Transform backgroundTesto;
+
+    public List<GameObject> lista1, lista2;
 
     float ammount;
     public void ResetScene()
@@ -80,5 +85,69 @@ public class UIManager : MonoBehaviour
     {
         LeanTween.scale(backgroundTesto.gameObject, Vector3.one * ammount, 1).setEasePunch();
         backgroundTesto.LeanMove(new Vector3( (Screen.width * 135 / 100), testoSalvataggio.transform.position.y), 1).setEaseInOutQuart().delay = 0.5f;
+    }
+
+    public void ApriCaroselloDocumentiRelativo(int numeroFascicolo)
+    {
+        //ripulire la lista di tutte le slides e accenderle tutte
+        _sliderMenu.Slides.Clear();
+        docNonDisponibile.SetActive(false);
+        foreach (GameObject doc in lista1)
+        {
+            doc.SetActive(true);
+        }
+        foreach (GameObject doc in lista2)
+        {
+            doc.SetActive(true);
+        }
+
+
+        //in base a cosa viene premuto si aggiunge una lista o l'altra
+        switch (numeroFascicolo)
+        {
+            case 0:
+                foreach(GameObject doc in lista1)
+                {
+                    _sliderMenu.Slides.Add(doc);
+                }
+                foreach (GameObject doc in lista2)
+                {
+                    doc.SetActive(false);
+                }
+                break;
+            case 1:
+                foreach (GameObject doc in lista2)
+                {
+                    _sliderMenu.Slides.Add(doc);
+                }
+                foreach (GameObject doc in lista1)
+                {
+                    doc.SetActive(false);
+                }
+                break;
+            default:
+                docNonDisponibile.SetActive(true);
+                foreach (GameObject doc in lista1)
+                {
+                    doc.SetActive(false);
+                }
+                foreach (GameObject doc in lista2)
+                {
+                    doc.SetActive(false);
+                }
+                break;
+        }
+
+        //spegnere le slide non utilizzate
+
+    }
+
+    public void SpegniDocNonDisp()
+    {
+        Invoke("SpegniImage", 0.4f);
+    }
+    void SpegniImage()
+    {
+        docNonDisponibile.SetActive(false);
     }
 }
