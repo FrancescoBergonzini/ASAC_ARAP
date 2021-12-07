@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     Animator faldoni_anim;
 
     public GameObject caroselloDocumenti;
+    UIManager _uiManager;
 
     //
     public List<Animator> AnimatoriAperturaFaldoni;
@@ -29,8 +30,7 @@ public class Player : MonoBehaviour
     {
         faldoni_anim = GetComponent<Animator>();
         caroselloDocumenti = GameObject.Find("CaroselloDocumenti");
-        
-
+        _uiManager = GameObject.Find("Manager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -161,8 +161,12 @@ public class Player : MonoBehaviour
 
     private void ApriCaroselloDocumenti()
     {
+        //apro il carosello e setto le dimensioni in base alla lista di documenti del fascicolo premuto
+        _uiManager.ApriCaroselloDocumentiRelativo(contatore);
         //qua attivo carosello quando finisce animazione
         caroselloDocumenti.transform.GetChild(0).gameObject.SetActive(!caroselloDocumenti.transform.GetChild(0).gameObject.activeSelf);
+
+
         isSwitching = !isSwitching;
 
         apriono = !apriono;
