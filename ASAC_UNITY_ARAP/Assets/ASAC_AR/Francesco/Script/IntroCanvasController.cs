@@ -66,8 +66,8 @@ public class IntroCanvasController : MonoBehaviour
             {
                 scanView = true;
 
-                //images.updated.Clear();
-                //images.added.Clear();
+                images.updated.Clear();
+                images.added.Clear();
                 images.removed.Clear();
 
                 //_trackedManager.enabled = false;
