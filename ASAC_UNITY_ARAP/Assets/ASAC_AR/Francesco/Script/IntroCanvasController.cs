@@ -17,6 +17,8 @@ public class IntroCanvasController : MonoBehaviour
     bool scanView;
     [SerializeField] GameObject scannerobj, buttonCarosello, buttonScan;
 
+    ARTrackedImage salvaimage;
+
     private void Awake()
     {
         _trackedManager = FindObjectOfType<ARTrackedImageManager>();
@@ -63,9 +65,20 @@ public class IntroCanvasController : MonoBehaviour
             if (image.referenceImage.name == "QR_Code")
             {
                 scanView = true;
+
+                //images.updated.Clear();
+                //images.added.Clear();
+                images.removed.Clear();
+
+                //_trackedManager.enabled = false;
+                //Destroy(_trackedManager.gameObject);
+                
             }
         }
 
     }
+
+   
+
 
 }

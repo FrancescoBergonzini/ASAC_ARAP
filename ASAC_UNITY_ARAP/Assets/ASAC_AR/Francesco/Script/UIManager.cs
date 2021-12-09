@@ -150,4 +150,10 @@ public class UIManager : MonoBehaviour
     {
         docNonDisponibile.SetActive(false);
     }
+
+    public void ResetApplication()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(0);
+    }
 }
