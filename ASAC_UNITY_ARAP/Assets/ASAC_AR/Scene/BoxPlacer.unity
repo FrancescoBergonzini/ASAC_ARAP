@@ -1493,8 +1493,20 @@ PrefabInstance:
     - target: {fileID: 5975163119990506340, guid: 2a178e349b4c3774aada85d3e166600f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 350
+      value: 274
       objectReference: {fileID: 0}
+    - target: {fileID: 5975163119990506341, guid: 2a178e349b4c3774aada85d3e166600f,
+        type: 3}
+      propertyPath: m_Text
+      value: "Documenti \nal momento \nnon disponibili\n\n\nCi scusiamo \nper il
+        disagio"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975163119990506341, guid: 2a178e349b4c3774aada85d3e166600f,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: baccd47866c27da439a5a572e07f6428,
+        type: 3}
     - target: {fileID: 5975163119990506341, guid: 2a178e349b4c3774aada85d3e166600f,
         type: 3}
       propertyPath: m_FontData.m_BestFit
@@ -1503,12 +1515,12 @@ PrefabInstance:
     - target: {fileID: 5975163119990506341, guid: 2a178e349b4c3774aada85d3e166600f,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 60
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 5975163119990506341, guid: 2a178e349b4c3774aada85d3e166600f,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 60
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 5975163120620668152, guid: 2a178e349b4c3774aada85d3e166600f,
         type: 3}
@@ -1618,7 +1630,7 @@ PrefabInstance:
     - target: {fileID: 5975163120620668153, guid: 2a178e349b4c3774aada85d3e166600f,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.6862745
+      value: 0.49803922
       objectReference: {fileID: 0}
     - target: {fileID: 5975163120620668159, guid: 2a178e349b4c3774aada85d3e166600f,
         type: 3}

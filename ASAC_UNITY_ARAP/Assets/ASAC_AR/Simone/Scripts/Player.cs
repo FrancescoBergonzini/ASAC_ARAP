@@ -152,6 +152,8 @@ public class Player : MonoBehaviour
 
     private void AccendiOSpegniCarosello(bool apri)
     {
+        isSwitching = !isSwitching;
+
         float tempo;
         tempo = (apri == false ? 1.5f : 0.1f);  
 
@@ -165,9 +167,6 @@ public class Player : MonoBehaviour
         _uiManager.ApriCaroselloDocumentiRelativo(contatore);
         //qua attivo carosello quando finisce animazione
         caroselloDocumenti.transform.GetChild(0).gameObject.SetActive(!caroselloDocumenti.transform.GetChild(0).gameObject.activeSelf);
-
-
-        isSwitching = !isSwitching;
 
         apriono = !apriono;
     }
