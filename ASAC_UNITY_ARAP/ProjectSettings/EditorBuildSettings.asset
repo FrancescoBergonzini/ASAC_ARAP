@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ASAC_AR/Scene/IntroUI.unity
-    guid: f22d6c1b8bebe8c4f861c6e7ac50ab69
-  - enabled: 1
-    path: Assets/ASAC_AR/Scene/BoxPlacer.unity
-    guid: 3effbe2ee8ca50d4f83fb21e936af512
+    path: Assets/ASAC_AR/test_touch/Test_touch.unity
+    guid: c5ee9f63da1ebec45885c0c565c91805
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

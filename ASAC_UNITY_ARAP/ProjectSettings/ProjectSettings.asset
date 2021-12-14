@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: ITS_tEST_ASAC
-  productName: ASAC_UNITY_ARAP
+  companyName: Test_Touch
+  productName: Touch_test
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -156,7 +156,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.ITS_tEST_ASAC.ASAC_UNITY_ARAP
+    Android: com.Test_Touch.Touch_test
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -273,7 +273,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 547db77d7adbabe4ba68a1718deb2955, type: 3}
+      m_Icon: {fileID: 2800000, guid: c4c548a339b4d41a590928c0c98934a7, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

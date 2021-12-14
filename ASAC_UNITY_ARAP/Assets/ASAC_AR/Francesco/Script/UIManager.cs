@@ -144,7 +144,7 @@ public class UIManager : MonoBehaviour
 
     public void SpegniDocNonDisp()
     {
-        Invoke("SpegniImage", 0.1f);
+        Invoke("SpegniImage", 0.3f);
     }
     void SpegniImage()
     {
