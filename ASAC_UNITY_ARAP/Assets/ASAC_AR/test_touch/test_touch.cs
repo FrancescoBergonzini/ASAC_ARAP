@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class test_touch : MonoBehaviour
@@ -17,8 +18,17 @@ public class test_touch : MonoBehaviour
 
     void CheckTouchSchermo()
     {
-        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetMouseButtonDown(0))
+        var tocco = Input.GetTouch(0);
+        
+        if (Input.touchCount > 0 && tocco.phase == TouchPhase.Began)
         {
+            int id = tocco.fingerId;
+            if (EventSystem.current.IsPointerOverGameObject(id))
+            {
+                return;
+            }
+
+            //
             contatoreSchermo++;
             text2.text = $"Contatore schermo: {contatoreSchermo}";
         }
